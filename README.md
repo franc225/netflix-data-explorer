@@ -51,6 +51,7 @@ netflix-data-explorer/
 │   └── test_main.py
 |
 ├── requirements.txt
+├── run_pipeline.bat
 ├── Dockerfile
 └── README.md
 ```
@@ -99,6 +100,19 @@ Run tests inside container:
 docker run netflix-pipeline
 ```
 
+## Local Development Workflow
+
+Run the complete local validation pipeline:
+
+```bash
+run_pipeline.bat
+```
+
+This script automatically:
+1. Runs pytest automated tests
+2. Builds the Docker image
+3. Runs the Docker container
+
 ## CI/CD Pipeline
 
 This project uses GitHub Actions for continuous integration.
@@ -134,7 +148,8 @@ Pipeline steps:
 
 ## Future Improvements
 
-- Add GitHub Actions CI/CD pipeline
 - Publish Docker image automatically
+- Add advanced data validation tests
 - Add data visualization dashboard
-- Add advanced data quality validation
+- Add logging and monitoring
+- Add scheduled workflow execution
