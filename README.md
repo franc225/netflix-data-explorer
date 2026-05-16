@@ -6,9 +6,9 @@
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458)
 ![Pytest](https://img.shields.io/badge/Tests-pytest-success)
 [![Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20BEFF)](https://www.kaggle.com/datasets/shivamb/netflix-shows)
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![CI Pipeline](https://github.com/franc225/netflix-data-explorer/actions/workflows/ci.yml/badge.svg)
 
-A containerized Python data pipeline project using Docker, pytest, and GitHub Actions CI/CD.
+A containerized Python data pipeline project using Docker, pytest, and GitHub Actions continuous integration workflows.
 
 ## Project Overview
 
@@ -33,6 +33,10 @@ Dataset source:
 
 ```text
 netflix-data-explorer/
+|
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 │
 ├── app/
 │   └── main.py
@@ -95,6 +99,21 @@ Run tests inside container:
 docker run netflix-pipeline
 ```
 
+## CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration.
+
+The automated workflow runs on:
+- push to main branch
+- pull requests
+
+Pipeline steps:
+1. Checkout repository
+2. Setup Python
+3. Install dependencies
+4. Run pytest automated tests
+5. Build Docker image
+
 ## Sample Output
 
 ```text
@@ -102,6 +121,16 @@ docker run netflix-pipeline
 0    Movie   XXXX
 1  TV Show   XXXX
 ```
+
+## Skills Demonstrated
+
+- Python data processing
+- pandas data analysis
+- Docker containerization
+- Automated testing with pytest
+- GitHub Actions CI/CD
+- Linux-based development workflows
+- Reproducible environments
 
 ## Future Improvements
 
