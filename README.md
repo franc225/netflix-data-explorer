@@ -4,10 +4,11 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458)
-![Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20BEFF)
+![Pytest](https://img.shields.io/badge/Tests-pytest-success)
+[![Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20BEFF)](https://www.kaggle.com/datasets/shivamb/netflix-shows)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
 
-A simple Python data pipeline project using Docker and GitHub Actions CI/CD.
+A containerized Python data pipeline project using Docker, pytest, and GitHub Actions CI/CD.
 
 ## Project Overview
 
@@ -42,6 +43,9 @@ netflix-data-explorer/
 ├── output/
 │   └── summary.csv
 │
+├── tests/
+│   └── test_main.py
+|
 ├── requirements.txt
 ├── Dockerfile
 └── README.md
@@ -69,6 +73,28 @@ Run container:
 docker run netflix-pipeline
 ```
 
+## Run Tests
+
+### Local pytest
+
+```bash
+pytest
+```
+
+### Dockerized tests
+
+Build image:
+
+```bash
+docker build -t netflix-pipeline .
+```
+
+Run tests inside container:
+
+```bash
+docker run netflix-pipeline
+```
+
 ## Sample Output
 
 ```text
@@ -79,7 +105,7 @@ docker run netflix-pipeline
 
 ## Future Improvements
 
-- Add automated tests with pytest
-- Add GitHub Actions CI/CD
-- Publish Docker image
-- Add dashboard visualization
+- Add GitHub Actions CI/CD pipeline
+- Publish Docker image automatically
+- Add data visualization dashboard
+- Add advanced data quality validation

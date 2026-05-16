@@ -1,15 +1,22 @@
 import pandas as pd
 
-# Charger le dataset
-df = pd.read_csv("data/netflix_titles.csv")
 
-# Analyse simple
-summary = df.groupby("type").size().reset_index(name="count")
+def generate_summary():
+    df = pd.read_csv("data/netflix_titles.csv")
 
-# Afficher
-print(summary)
+    summary = (
+        df.groupby("type")
+        .size()
+        .reset_index(name="count")
+    )
 
-# Export CSV
-summary.to_csv("output/summary.csv", index=False)
+    summary.to_csv("output/summary.csv", index=False)
 
-print("Pipeline completed successfully.")
+    return summary
+
+
+if __name__ == "__main__":
+    result = generate_summary()
+
+    print(result)
+    print("Pipeline completed successfully.")
